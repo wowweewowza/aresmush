@@ -58,8 +58,6 @@ module AresMUSH
            color = "%xh%xy"
          when "Roster"
            color = "%xh%xg"
-         when "Frozen"
-           color = "%xh%xm"
          else
            color = "%xc"
        end
@@ -189,10 +187,6 @@ module AresMUSH
              Global.logger.debug "#{idle_name} idle warned."
              Mail.send_mail([idle_name], t('idle.idle_warning_subject'), Global.read_config("idle", "idle_warn_msg"), nil)          
              idle_char.update(idle_warned: true)
-           when "Frozen"
-             Global.logger.debug "#{idle_name} idle status set to Frozen."
-             idle_char.update(idle_state: "Frozen")
-             Global.dispatcher.queue_event CharIdledOutEvent.new(idle_char.id, "Frozen")
            else
              Global.logger.debug "#{idle_name} idle status set to: #{action}."
              idle_char.update(idle_state: action)
