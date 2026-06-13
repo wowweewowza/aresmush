@@ -14,7 +14,7 @@ module AresMUSH
       case cmd.root
       when "idle"
         case cmd.switch
-        when "action", "gone", "npc", "dead", "warn", "roster", "frozen", "set"
+        when "action", "gone", "npc", "dead", "warn", "roster", "set"
           return IdleActionCmd
         when "execute"
           return IdleExecuteCmd
