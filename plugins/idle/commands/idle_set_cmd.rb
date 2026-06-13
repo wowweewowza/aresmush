@@ -23,7 +23,7 @@ module AresMUSH
       end
       
       def check_action
-        actions = [ 'None', 'Dead', 'Gone', 'Npc' ]
+        actions = [ 'None', 'Dead', 'Gone', 'Frozen', 'Npc' ]
         return t('idle.use_roster_cmd') if self.status == 'Roster'
         
         return t('idle.invalid_action', :actions => actions.join(" ")) if !actions.include?(self.status)
