@@ -13,7 +13,7 @@ module AresMUSH
         end
         
        { 
-         idle_actions: [ "None", "Warn", "Gone", "Roster", "Npc", "Dead", "Frozen", "Destroy" ],
+         idle_actions: [ "None", "Warn", "Gone", "Roster", "Npc", "Dead", "Destroy" ],
          chars: Idle.build_idle_queue.map { |id, action| build_char_data(id, action, enactor) }
        }
       end
