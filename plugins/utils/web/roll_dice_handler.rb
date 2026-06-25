@@ -2,11 +2,12 @@ module AresMUSH
   module Utils
     class RollDiceRequestHandler
       def handle(request)
-        scene = Scene[request.args['id']]
+        scene = Scene[request.args['scene_id']]
         enactor = request.enactor
         # dice_str = request.args['dice_string']
-        num = request.args['num']
-        sides = request.args['sides']
+        num = (request.args['num'] || "0").to_i
+        sides = (request.args['sides']|| "0").to_i
+        is_private = request.args['is_private']
         
         if (!scene)
           return { error: t('webportal.not_found') }
@@ -38,8 +39,12 @@ module AresMUSH
           return { error: t('dice.invalid_dice_string') }
         end
 
-        scene.room.emit_ooc message
-        Scenes.add_to_scene(scene, message, Game.master.system_character, false, true)
+        if (!is_private)
+          scene.room.emit_ooc message
+          Scenes.add_to_scene(scene, message, Game.master.system_character, false, true)
+        else
+          raise message
+        end
         
         {}
       end
