@@ -8,6 +8,11 @@ module AresMUSH
         num = (request.args['num'] || "0").to_i
         sides = (request.args['sides']|| "0").to_i
         is_private = request.args['is_private']
+
+        Global.logger.debug "scene = #{scene}"
+        Global.logger.debug "num = #{num}"
+        Global.logger.debug "sides = #{sides}"
+        Global.logger.debug "is_private = #{is_private}"
         
         if (!scene)
           return { error: t('webportal.not_found') }
