@@ -35,6 +35,7 @@ module AresMUSH
       ability_type = FS3Skills.get_ability_type(ability_name)
       
       if (ability_type == :attribute)
+        return "That rating cannot be achieved with XP." if rating == 5
         # Attrs cost 2 points per dot
         dots_beyond_chargen = Global.read_config("fs3skills", "attr_dots_beyond_chargen_max") || 2
         max = Global.read_config("fs3skills", "max_points_on_attrs") + (dots_beyond_chargen * 2)
