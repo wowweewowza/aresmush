@@ -40,32 +40,26 @@ module AresMUSH
         return nil if FS3Skills.can_manage_abilities?(enactor)
         Chargen.check_chargen_locked(enactor)
       end
-
-      def check_admin_override
-        return nil if !FS3Skills.can_manage_abilities?(enactor)
-        client.emit_success "RAAGHHHHHHHHH"
-        ClassTargetFinder.with_a_character(self.name, client, enactor) do |model|        
-          new_rating = self.rating.to_i
-          
-          client.emit_success FS3Skills.ability_raised_text(model, self.ability_name)
-          
-        end
-      end
       
       def handle
         return nil if FS3Skills.can_manage_abilities?(enactor)
         ClassTargetFinder.with_a_character(self.name, client, enactor) do |model|        
           new_rating = self.rating.to_i
-          error = FS3Skills.check_rating(self.ability_name, new_rating)
-          if (error)
-            client.emit_failure error
-            return
-          end
-          
-          error = FS3Skills.set_ability(model, self.ability_name, new_rating)
-          if (error)
-            client.emit_failure error
+          if !FS3Skills.can_manage_abilities?(enactor)
+            error = FS3Skills.check_rating(self.ability_name, new_rating)
+            if (error)
+              client.emit_failure error
+              return
+            end
+            
+            error = FS3Skills.set_ability(model, self.ability_name, new_rating)
+            if (error)
+              client.emit_failure error
+            else
+              client.emit_success FS3Skills.ability_raised_text(model, self.ability_name)
+            end
           else
+            client.emit_success "Admin Access"
             client.emit_success FS3Skills.ability_raised_text(model, self.ability_name)
           end
           
