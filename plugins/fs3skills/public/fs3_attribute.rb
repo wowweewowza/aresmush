@@ -21,6 +21,8 @@ module AresMUSH
         return "%xg@%xy@%xr@%xn"
       when 4
         return "%xg@%xy@%xr@%xb@%xn"
+      when 5
+        return "%xg@%xy@%xr@%xb@%xn%x168@%xn"
       end
     end
     
