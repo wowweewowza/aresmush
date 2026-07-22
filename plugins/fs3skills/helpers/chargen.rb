@@ -89,8 +89,8 @@ module AresMUSH
       min_rating = FS3Skills.get_min_rating(ability_type)
       max_rating = FS3Skills.get_max_rating(ability_type)
 
-      # return t('fs3skills.max_rating_is', :rating => max_rating) if (rating > max_rating)
-      # return t('fs3skills.min_rating_is', :rating => min_rating) if (rating < min_rating)
+      return t('fs3skills.max_rating_is', :rating => max_rating) if (rating > max_rating)
+      return t('fs3skills.min_rating_is', :rating => min_rating) if (rating < min_rating)
       return nil
     end
     
