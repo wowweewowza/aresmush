@@ -27,7 +27,7 @@ module AresMUSH
         @validator.require_int('free_backgrounds', 0)
         @validator.require_int('free_languages', 0)
         @validator.require_int('max_ap', 1)
-        @validator.require_int('max_attr_rating', 1, 4)
+        @validator.require_int('max_attr_rating', 1, 5)
         @validator.require_hash('max_attrs_at_or_above')
         @validator.require_int('max_points_on_action', 0)
         @validator.require_int('max_points_on_attrs', 0)
