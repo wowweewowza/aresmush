@@ -43,7 +43,7 @@ module AresMUSH
 
       def check_admin_override
         return nil if !FS3Skills.can_manage_abilities?(enactor)
-        clien.emit_success "RAAGHHHHHHHHH"
+        client.emit_success "RAAGHHHHHHHHH"
         FS3Skills.set_ability(model, self.ability_name, new_rating)
       end
       
