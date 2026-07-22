@@ -42,7 +42,6 @@ module AresMUSH
       end
       
       def handle
-        return nil if FS3Skills.can_manage_abilities?(enactor)
         ClassTargetFinder.with_a_character(self.name, client, enactor) do |model|        
           new_rating = self.rating.to_i
           if !FS3Skills.can_manage_abilities?(enactor)
@@ -58,9 +57,11 @@ module AresMUSH
             else
               client.emit_success FS3Skills.ability_raised_text(model, self.ability_name)
             end
-          else
-            client.emit_success "Admin Access"
+          elsif FS3Skills.can_manage_abilities?(enactor)
+            client.emit_success "Admin Access."
             client.emit_success FS3Skills.ability_raised_text(model, self.ability_name)
+          else
+            client.emit_failure "Unknown error."
           end
           
         end
