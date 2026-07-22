@@ -85,7 +85,8 @@ module AresMUSH
     end
     
     def self.check_rating(ability_name, rating)
-      enactor = client.char
+      id = (json["auth"] || {})['id']
+      enactor = id ? Character.find_one_by_name(id) : nil
       ability_type = FS3Skills.get_ability_type(ability_name)
       min_rating = FS3Skills.get_min_rating(ability_type)
       max_rating = FS3Skills.get_max_rating(ability_type)
