@@ -51,7 +51,7 @@ module AresMUSH
           end
           
           error = FS3Skills.set_ability(model, self.ability_name, new_rating)
-          if (error) && !(FS3Skills.can_manage_abilities?(@enactor))
+        if (error) && !(FS3Skills.can_manage_abilities?(enactor))
             client.emit_failure error
           else
             client.emit_success FS3Skills.ability_raised_text(model, self.ability_name)
