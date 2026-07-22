@@ -6,7 +6,6 @@ fs3skills:
   free_languages: 3
   max_ap: 40
   max_attr_rating: 5
-  attr_rating_cap: 4
   max_attrs_at_or_above:
     '3': 4
     '4': 2
