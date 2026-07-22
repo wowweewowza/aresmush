@@ -31,20 +31,16 @@ module AresMUSH
     
     def self.check_can_learn(char, ability_name, rating)
       return t('fs3skills.cant_raise_further_with_xp') if self.xp_needed(ability_name, rating) == nil
+      return "That rating cannot be achieved with XP." if rating == 5
 
       ability_type = FS3Skills.get_ability_type(ability_name)
       
       if (ability_type == :attribute)
         # Attrs cost 2 points per dot
-        attr_cap = Global.read_config("fs3skills", "attr_rating_cap") || 2
-        if rating <= attr_cap
-          dots_beyond_chargen = Global.read_config("fs3skills", "attr_dots_beyond_chargen_max") || 2
-          max = Global.read_config("fs3skills", "max_points_on_attrs") + (dots_beyond_chargen * 2)
-          points = AbilityPointCounter.points_on_attrs(char)
-          new_total = points + 2
-        else
-          return nil
-        end
+        dots_beyond_chargen = Global.read_config("fs3skills", "attr_dots_beyond_chargen_max") || 2
+        max = Global.read_config("fs3skills", "max_points_on_attrs") + (dots_beyond_chargen * 2)
+        points = AbilityPointCounter.points_on_attrs(char)
+        new_total = points + 2
       elsif (ability_type == :action)
         dots_beyond_chargen = Global.read_config("fs3skills", "action_dots_beyond_chargen_max") || 3
         max = Global.read_config("fs3skills", "max_points_on_action") + dots_beyond_chargen
