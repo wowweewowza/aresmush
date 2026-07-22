@@ -36,10 +36,15 @@ module AresMUSH
       
       if (ability_type == :attribute)
         # Attrs cost 2 points per dot
-        dots_beyond_chargen = Global.read_config("fs3skills", "attr_dots_beyond_chargen_max") || 2
-        max = Global.read_config("fs3skills", "max_points_on_attrs") + (dots_beyond_chargen * 2)
-        points = AbilityPointCounter.points_on_attrs(char)
-        new_total = points + 2
+        attr_cap = Global.read_config("fs3skills", "attr_rating_cap") || 2
+        if rating <= attr_cap
+          dots_beyond_chargen = Global.read_config("fs3skills", "attr_dots_beyond_chargen_max") || 2
+          max = Global.read_config("fs3skills", "max_points_on_attrs") + (dots_beyond_chargen * 2)
+          points = AbilityPointCounter.points_on_attrs(char)
+          new_total = points + 2
+        else
+          return nil
+        end
       elsif (ability_type == :action)
         dots_beyond_chargen = Global.read_config("fs3skills", "action_dots_beyond_chargen_max") || 3
         max = Global.read_config("fs3skills", "max_points_on_action") + dots_beyond_chargen
