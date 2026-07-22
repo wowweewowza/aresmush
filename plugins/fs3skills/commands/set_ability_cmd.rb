@@ -46,11 +46,6 @@ module AresMUSH
         client.emit_success "RAAGHHHHHHHHH"
         ClassTargetFinder.with_a_character(self.name, client, enactor) do |model|        
           new_rating = self.rating.to_i
-          error = FS3Skills.check_rating(self.ability_name, new_rating)
-          if (error)
-            client.emit_failure error
-            return
-          end
           
           client.emit_success FS3Skills.ability_raised_text(model, self.ability_name)
           
