@@ -4,10 +4,11 @@ module AresMUSH
     class RaiseAbilityCmd
       include CommandHandler
       
-      attr_accessor :name
+      attr_accessor :name, :enactor
 
       def parse_args
         self.name = titlecase_arg(cmd.args)
+        @enactor
       end
 
       def required_args
@@ -30,7 +31,7 @@ module AresMUSH
         end
       
         error = FS3Skills.set_ability(enactor, self.name, new_rating)
-        if (error)
+        if (error) && !(FS3Skills.can_manage_abilities?(@enactor))
           client.emit_failure error
         else
           client.emit_success FS3Skills.ability_raised_text(enactor, self.name)
