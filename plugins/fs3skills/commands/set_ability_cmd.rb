@@ -59,6 +59,7 @@ module AresMUSH
             end
           elsif FS3Skills.can_manage_abilities?(enactor)
             client.emit_success "Admin Access."
+            FS3Skills.set_ability(model, self.ability_name, new_rating)
             client.emit_success FS3Skills.ability_raised_text(model, self.ability_name)
           else
             client.emit_failure "Unknown error."
