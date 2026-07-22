@@ -44,12 +44,17 @@ module AresMUSH
       def handle
         ClassTargetFinder.with_a_character(self.name, client, enactor) do |model|        
           new_rating = self.rating.to_i
-          if FS3Skills.can_manage_abilities?(enactor)
-            client.emit_success "Admin Access on " + model.name
-            FS3Skills.set_ability(model, self.ability_name, new_rating)
-            client.emit_success FS3Skills.ability_raised_text(model, self.ability_name)
+          error = FS3Skills.check_rating(self.ability_name, new_rating)
+          if (error)
+            client.emit_failure error
+            return
+          end
+          
+          error = FS3Skills.set_ability(model, self.ability_name, new_rating)
+          if (error)
+            client.emit_failure error
           else
-            client.emit_failure "Unknown error."
+            client.emit_success FS3Skills.ability_raised_text(model, self.ability_name)
           end
           
         end
