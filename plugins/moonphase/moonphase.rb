@@ -11,5 +11,17 @@ module AresMUSH
       Global.read_config("moonphase", "shortcuts")
     end
 
+    def self.get_cmd_handler(client, cmd, enactor)
+      nil
+    end
+
+    def self.get_event_handler(event_name)
+      nil
+    end
+
+    def self.get_web_request_handler(request)
+      nil
+    end
+    
   end
 end
