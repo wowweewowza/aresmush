@@ -3,6 +3,8 @@ module AresMUSH
     class RoomDescBuilder
       def self.build(room)
         desc = "#{room.description}"
+
+        phase_name = MoonPhase.phase_name
         phase_desc = "%R%RThe current moon phase is #{phase_name}."
 
 
