@@ -20,7 +20,9 @@ module AresMUSH
       when 0.9375...0.9700 then "approaching new"
       when 0.3000...0.0625 then "leaving new"
       when 0.0625...0.1875 then "waxing crescent"
-      when 0.1875...0.3125 then "first quarter"
+      when 0.1875...0.2200 then "approaching first quarter"
+      when 0.2200...0.2800 then "first quarter"
+      when 0.2800...0.3125 then "leaving first quarter"
       when 0.3125...0.4375 then "waxing gibbous"
       when 0.4375...0.4700 then "approaching full"
       when 0.4700...0.5300 then "full"
@@ -29,6 +31,7 @@ module AresMUSH
       when 0.6875...0.8125 then "last quarter"
       else "waning crescent"
       end
+
     end
 
   end

@@ -32,6 +32,11 @@ module AresMUSH
         end
         weather ? "%R%R#{weather}" : nil
       end
+
+      def self.moonphase
+        phase_name = MoonPhase.phase_name
+        return (t'The current moon phase is #{phase_name}.')
+      end
     end
   end
 end
