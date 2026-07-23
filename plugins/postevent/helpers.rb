@@ -3,6 +3,7 @@ module AresMUSH
 
     def self.create_forum_post(event)
       category_name = Global.read_config("postevent", "event_forum")
+      client.emit_success category_name # testing
       msg = PostEvent.format_msg(event)
       author = Character.named(event.organizer_name)
       Forum.post(category_name, event.title, msg, author)
