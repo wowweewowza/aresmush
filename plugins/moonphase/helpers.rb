@@ -16,7 +16,6 @@ module AresMUSH
       # This is essentially saying we are xx% through the synodic_month
 
       case phase
-      case phase
       when 0.0000...0.3000, 0.9700...1.0000 then "new"
       when 0.9375...0.9700 then "approaching new"
       when 0.3000...0.0625 then "leaving new"
