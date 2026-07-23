@@ -28,10 +28,6 @@ module AresMUSH
          weather[:main][:humidity]
        end
 
-       def moon_phase
-         weather[:main][:moon_phase]
-       end
-
        def temperature_range
          [weather[:main][:temp_min], weather[:main][:temp_max]]
        end
