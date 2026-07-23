@@ -146,7 +146,6 @@ module AresMUSH
     
     # Important: Client may actually be nil here for a system-initiated bbpost.
     def self.with_a_category(category_name, client, enactor, &block)
-      client.emit_success category_name
       if (category_name.is_integer?)
         category = BbsBoard.all_sorted[category_name.to_i - 1] rescue nil
       else
