@@ -4,8 +4,7 @@ module AresMUSH
       def self.build(room)
         desc = "#{room.description}"
 
-        phase_name = MoonPhase.phase_name
-        phase_desc = "%R%RThe current moon phase is #{phase_name}."
+        
 
 
         time_of_day = ICTime.time_of_day(room.area_name).titleize
@@ -27,7 +26,6 @@ module AresMUSH
         end
         
         desc
-        phase_desc
       end
     
       def self.weather(room)
@@ -36,6 +34,12 @@ module AresMUSH
           weather = Openweather.weather_for_area(room.area_name)
         end
         weather ? "%R%R#{weather}" : nil
+      end
+
+      def self.moonphase
+        phase_name = MoonPhase.phase_name
+        phase_desc = "%R%RThe current moon phase is #{phase_name}."
+        phase_desc
       end
 
     end
