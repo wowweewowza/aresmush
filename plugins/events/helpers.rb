@@ -80,7 +80,6 @@ module AresMUSH
       Channels.announce_notification(t('events.event_created_notification', :title => title))
       Events.events_updated
       Achievements.award_achievement(enactor, "event_created")
-      PostEvent.create_forum_post(event)
       return event
     end
    
@@ -109,7 +108,6 @@ module AresMUSH
         Login.notify(s.character, :event, message, event.id)
       end
       Channels.announce_notification(message)
-      if Global.read_config("postevent", "reply_on_edit") then PostEvent.reply_to_forum_post(event) end
     end
    
     def self.format_timestamp(time)
