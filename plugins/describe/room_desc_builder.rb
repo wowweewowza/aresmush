@@ -35,7 +35,7 @@ module AresMUSH
 
       def self.moonphase
         phase_name = MoonPhase.phase_name
-        return (t'The current moon phase is #{phase_name}.')
+        "%R%RThe current moon phase is #{phase_name}."
       end
     end
   end
