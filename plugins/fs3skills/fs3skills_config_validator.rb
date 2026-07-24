@@ -182,8 +182,8 @@ module AresMUSH
             @validator.add_error "fs3skills:max_attrs_at_or_above #{level} is not a valid number."
           end
 
-          if (level.to_i < 1 || level.to_i > 4)
-            @validator.add_error "fs3skills:max_attrs_at_or_above #{level} must be from 1-4."
+          if (level.to_i < 1 || level.to_i > 5)
+            @validator.add_error "fs3skills:max_attrs_at_or_above #{level} must be from 1-5."
           end
 
           if (num.to_i < 0)
