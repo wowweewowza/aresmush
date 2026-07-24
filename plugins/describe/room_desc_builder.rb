@@ -4,6 +4,9 @@ module AresMUSH
       def self.build(room)
         desc = "#{room.description}"
 
+        
+
+
         time_of_day = ICTime.time_of_day(room.area_name).titleize
         if (room.vistas && room.vistas.has_key?(time_of_day))
           desc << " "
@@ -27,17 +30,16 @@ module AresMUSH
     
       def self.weather(room)
         weather = nil
-        if Manage.is_extra_installed?("openweather")
-          if (AresMUSH::Openweather.is_enabled?)
-            weather = Openweather.weather_for_area(room.area_name)
-          end
-        elsif Manage.is_extra_installed?("weather")
-          if Weather.is_enabled? 
-            weather = Weather.weather_for_area(room.area_name)
-          end
+        if (AresMUSH::Openweather.is_enabled?)
+          weather = Openweather.weather_for_area(room.area_name)
         end
-        weather ? "%R%R#{weather}" : nil
+
+        phase_name = MoonPhase.phase_name
+        phase_desc = "%R%RThe current moon phase is #{phase_name}."
+
+        weather ? "%R%R#{weather}%R%R#{phase_desc}" : nil
       end
+
     end
   end
 end
