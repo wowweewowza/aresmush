@@ -6,7 +6,7 @@ module AresMUSH
     
     def self.modify_focus(char, amount)
       willpower_attr = char.fs3_attributes.detect { |a| a.name == "Willpower" }
-      willpower_rating = target_attr&.rating
+      willpower_rating = willpower_attr&.rating
       max_focus = willpower_rating * 2
       focus = char.focus + amount
       focus = [max_focus, focus].min
@@ -16,7 +16,7 @@ module AresMUSH
 
     def self.reset_focus(char, scene)
       willpower_attr = char.fs3_attributes.detect { |a| a.name == "Willpower" }
-      willpower_rating = target_attr&.rating
+      willpower_rating = willpower_attr&.rating
       max_focus = willpower_rating * 2
       char.update(wow_focus: max_focus)
 
