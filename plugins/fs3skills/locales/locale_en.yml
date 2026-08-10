@@ -97,7 +97,8 @@ en:
         invalid_focus_points: "That is not a valid number of focus points."
         focus_awarded: "%{focus} focus points added to %{name}."
         focus_point_spent: "%{name} spends %{amount} focus point on %{reason}."
-        not_enough_focus: "You don't have any focus points."
+        no_focus: "You don't have any focus points."
+        not_enough_focus: "You don't have enough focus points."
         focus_reset: "%{name} resets their focus to %{focus}."
 
         # ------------------------------------------------------
