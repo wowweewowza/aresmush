@@ -37,7 +37,6 @@ module AresMUSH
         if (sender.focus < 1)
           return { error: t('fs3skills.no_focus') }
         elsif (sender.focus < amount)
-          Global.logger.error "focus is less than the amount yet the error is not appearing"
           return { error: t('fs3skills.not_enough_focus') }
         end
         FS3Skills.spend_focus(sender, amount, reason, scene)
