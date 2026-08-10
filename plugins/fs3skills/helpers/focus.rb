@@ -20,7 +20,7 @@ module AresMUSH
       max_focus = willpower_rating * 2
       char.update(wow_focus: max_focus)
 
-      message = t('fs3skills.focus_reset', :name => char.name, :focus => focus)
+      message = t('fs3skills.focus_reset', :name => char.name, :focus => char.focus)
 
       if (scene)
         scene.room.emit_ooc message
