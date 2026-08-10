@@ -6,7 +6,7 @@ module AresMUSH
         enactor = request.enactor
         sender_name = request.args['sender']
         reason = request.args['reason']
-        amount = request.args['amount']
+        amount = request.args['amount'].to_i
         
         request.log_request
         
