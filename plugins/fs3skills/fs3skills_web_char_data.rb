@@ -41,6 +41,7 @@ module AresMUSH
             damage_mod: damage_mod,
             show_sheet: show_sheet,
             luck_points: char.luck.floor,
+            focus_points: char.focus.floor,
             xp: xp
           }
         else
