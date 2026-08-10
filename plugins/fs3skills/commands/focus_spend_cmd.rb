@@ -1,8 +1,9 @@
 module AresMUSH
   module FS3Skills
-    class LuckSpendCmd
+    class FocusSpendCmd
       include CommandHandler
       
+      attr_accessor :amount
       attr_accessor :reason
 
       def parse_args
@@ -13,13 +14,13 @@ module AresMUSH
         [ self.reason ]
       end
       
-      def check_luck
-        return t('fs3skills.not_enough_luck') if enactor.luck < 1
+      def check_focus
+        return t('fs3skills.not_enough_focus') if enactor.focus < 1
         return nil
       end
       
       def handle
-        FS3Skills.spend_luck(enactor, self.reason, enactor_room.scene)
+        FS3Skills.spend_focus(enactor, self.amount, self.reason, enactor_room.scene)
       end
     end
   end
