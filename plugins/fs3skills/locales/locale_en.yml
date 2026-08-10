@@ -127,6 +127,7 @@ en:
         
         xp_title: "XP:"
         luck_title: "Luck Points:"
+        focus_title: "Focus Points:"
         
         attributes_title: "Attributes"
         action_skills_title: "Action Skills"
