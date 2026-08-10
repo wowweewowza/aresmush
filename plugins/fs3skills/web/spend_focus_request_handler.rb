@@ -6,6 +6,7 @@ module AresMUSH
         enactor = request.enactor
         sender_name = request.args['sender']
         reason = request.args['reason']
+        amount = request.args['amount']
         
         request.log_request
         
@@ -34,9 +35,11 @@ module AresMUSH
         end
         
         if (sender.focus < 1)
-          return { error: t('fs3skills.not_enough_luck') }
+          return { error: t('fs3skills.not_enough_focus') }
+        elsif (sender.focus > amount)
+          return { error: t('fs3skills.not_enough_focus') }
         end
-        FS3Skills.spend_luck(sender, reason, scene)
+        FS3Skills.spend_focus(sender, amount, reason, scene)
        
         {
         }
