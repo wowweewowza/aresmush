@@ -104,6 +104,10 @@ module AresMUSH
         return LearnAbilityRequestHandler
       when"spendLuck"
         return SpendLuckRequestHandler
+      when"spendFocus"
+        return SpendFocusRequestHandler
+      when"resetFocus"
+        return ResetFocusRequestHandler
       end
       nil
     end
