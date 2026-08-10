@@ -6,5 +6,5 @@ summary: Using focus points.
 
 Focus Points in FS3 can be spent on special abilities as defined by the game runners.  
 
-`focus/spend <reason>` - Spends focus outside of combat.
+`focus/spend <amount>/<reason>` - Spends focus outside of combat.
 `focus/reset` - Resets your focus to its maximum.
