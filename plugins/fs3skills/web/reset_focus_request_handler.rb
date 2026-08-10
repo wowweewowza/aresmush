@@ -5,7 +5,6 @@ module AresMUSH
         scene = Scene[request.args['scene_id']]
         enactor = request.enactor
         sender_name = request.args['sender']
-        reason = request.args['reason']
         
         request.log_request
         
