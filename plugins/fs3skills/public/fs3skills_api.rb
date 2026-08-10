@@ -177,9 +177,7 @@ module AresMUSH
         fs3: {
           can_manage_xp: FS3Skills.can_manage_xp?(viewer),
           can_manage_luck: FS3Skills.can_manage_luck?(viewer),
-          can_manage_focus: FS3Skills.can_manage_focus?(viewer),
-          show_fs3_tab: FS3Skills.can_manage_xp?(viewer) || FS3Skills.can_manage_luck?(viewer) || FS3Skills.can_manage_focus?(viewer),
-          focus: char.wow_focus,
+          show_fs3_tab: FS3Skills.can_manage_xp?(viewer) || FS3Skills.can_manage_luck?(viewer),
           luck: char.fs3_luck,
           xp: char.fs3_xp
         }
@@ -193,10 +191,6 @@ module AresMUSH
 
       if FS3Skills.can_manage_luck?(enactor)
         char.update(fs3_luck: (args['fs3']['luck']).to_i)
-      end
-
-      if FS3Skills.can_manage_focus?(enactor)
-        char.update(wow_focus: (args['wow']['focus']).to_i)
       end
       
       nil

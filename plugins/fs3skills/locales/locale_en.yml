@@ -91,23 +91,13 @@ en:
         too_many_advantages: "%xh%xr< Too many points on advantages. (%{max} max) >%xn"
 
         # ------------------------------------------------------
-        # FOCUS
-        # ------------------------------------------------------
-
-        invalid_focus_points: "That is not a valid number of focus points."
-        focus_awarded: "%{focus} focus points added to %{name}."
-        focus_point_spent: "%{name} spends a focus point on %{reason}."
-        not_enough_focus: "You don't have any focus points."
-        focus_reset: "%{name} resets their focus to %{focus}."
-
-        # ------------------------------------------------------
         # LUCK
         # ------------------------------------------------------
         
         invalid_luck_points: "That is not a valid number of luck points."
         luck_awarded: "%{luck} luck points awarded to %{name} for %{reason}."
         luck_award_mail_subject: "Luck Points Awarded"
-        not_enough_luck: "You don't have any luck points."
+        not_enough_points: "You don't have any luck points."
         #luck_point_spent: 
         #    one: "%{name} spends a luck point!"
         #    other: "%{name} spends %{count} luck points!"

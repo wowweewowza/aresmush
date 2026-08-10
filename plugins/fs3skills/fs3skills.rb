@@ -26,15 +26,6 @@ module AresMUSH
         end
       when "learn"
         return LearnAbilityCmd
-      when "focus"
-        case cmd.switch
-        when "add"
-          return FocusAwardCmd
-        when "spend"
-          return FocusSpendCmd
-        when "reset"
-          return FocusResetCmd
-        end
       when "luck"
         case cmd.switch
         when "award"
