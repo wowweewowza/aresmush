@@ -34,7 +34,7 @@ module AresMUSH
         end
         
         if (sender.luck < 1)
-          return { error: t('fs3skills.not_enough_points') }
+          return { error: t('fs3skills.not_enough_luck') }
         end
         FS3Skills.spend_luck(sender, reason, scene)
        

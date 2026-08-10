@@ -13,9 +13,16 @@ module AresMUSH
       focus = [0, focus].max
       char.update(wow_focus: focus)
     end
+
+    def self.reset_focus(char)
+      willpower_attr = char.fs3_attributes.detect { |a| a.name == "Willpower" }
+      willpower_rating = target_attr&.rating
+      max_focus = willpower_rating * 2
+      char.update(wow_focus: max_focus)
+    end
     
-    def self.spend_focus(char, reason, scene)
-      char.spend_focus(1)
+    def self.spend_focus(char, amount, reason, scene)
+      char.spend_focus(amount)
       message = t('fs3skills.focus_point_spent', :name => char.name, :reason => reason)
 
       if (scene)
