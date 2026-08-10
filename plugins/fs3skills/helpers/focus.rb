@@ -32,7 +32,7 @@ module AresMUSH
     
     def self.spend_focus(char, amount, reason, scene)
       char.spend_focus(amount)
-      message = t('fs3skills.focus_point_spent', :name => char.name, :reason => reason)
+      message = t('fs3skills.focus_point_spent', :name => char.name, :amount => amount, :reason => reason)
 
       if (scene)
         scene.room.emit_ooc message

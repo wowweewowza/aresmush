@@ -3,19 +3,20 @@ module AresMUSH
     class FocusSpendCmd
       include CommandHandler
       
-      attr_accessor :amount
-      attr_accessor :reason
+      attr_accessor :amount, :reason
 
       def parse_args
-        self.reason = trim_arg(cmd.args)
+        args = cmd.parse_args(ArgParser.arg1_slash_arg2)
+        self.amount = integer_arg(args.arg1)
+        self.reason = args.arg2
       end
 
       def required_args
-        [ self.reason ]
+        [ self.amount, self.reason ]
       end
       
-      def check_focus
-        return t('fs3skills.not_enough_focus') if enactor.focus < 1
+      def check_amount
+        return t('fs3skills.invalid_focus_points') if self.amount == 0
         return nil
       end
       
