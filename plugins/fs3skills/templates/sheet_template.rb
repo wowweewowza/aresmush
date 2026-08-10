@@ -18,6 +18,10 @@ module AresMUSH
       def luck
         @char.luck.floor
       end
+
+      def focus
+        @char.focus.floor
+      end
       
       def show_section(section)
         sections = ['attributes', 'action', 'background', 'languages', 'advantages']
