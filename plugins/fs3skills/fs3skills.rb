@@ -26,6 +26,15 @@ module AresMUSH
         end
       when "learn"
         return LearnAbilityCmd
+      when "focus"
+        case cmd.switch
+        when "add"
+          return FocusAwardCmd
+        when "spend"
+          return FocusSpendCmd
+        when "reset"
+          return FocusResetCmd
+        end
       when "luck"
         case cmd.switch
         when "award"
@@ -95,6 +104,10 @@ module AresMUSH
         return LearnAbilityRequestHandler
       when"spendLuck"
         return SpendLuckRequestHandler
+      when"spendFocus"
+        return SpendFocusRequestHandler
+      when"resetFocus"
+        return ResetFocusRequestHandler
       end
       nil
     end

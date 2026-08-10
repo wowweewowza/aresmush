@@ -1,11 +1,10 @@
 module AresMUSH
   module FS3Skills
-    class SpendLuckRequestHandler
+    class ResetFocusRequestHandler
       def handle(request)
         scene = Scene[request.args['scene_id']]
         enactor = request.enactor
         sender_name = request.args['sender']
-        reason = request.args['reason']
         
         request.log_request
         
@@ -32,11 +31,8 @@ module AresMUSH
         if (scene.completed)
           return { error: t('scenes.scene_already_completed') }
         end
-        
-        if (sender.luck < 1)
-          return { error: t('fs3skills.not_enough_luck') }
-        end
-        FS3Skills.spend_luck(sender, reason, scene)
+      
+        FS3Skills.reset_focus(sender, scene)
        
         {
         }
