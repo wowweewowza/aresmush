@@ -4,14 +4,15 @@ module AresMUSH
       include CommandHandler
       
       def check_can_manage
-        return t('dispatcher.not_allowed') if !enactor.is_coder?
+        return t('dispatcher.not_allowed') if !enactor.has_permission?("tinker")
         return nil
       end
       
       def handle
-        client.emit_success "Done!"
+        char = Character.named("Testman")
+        target_attr = char.fs3_attributes.detect { |a| a.name == "Wits" }
+        client.emit target_attr&.rating
       end
-
     end
   end
 end
