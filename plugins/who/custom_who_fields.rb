@@ -14,6 +14,7 @@ module AresMUSH
         return looking_for_rp ? flag.ljust(width+6) : ""
       else 
         return nil
+      end
     end
   end
 end
