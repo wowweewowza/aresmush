@@ -13,10 +13,7 @@ module AresMUSH
     #    NOTE!! The sidebar is called A LOT because it's on every page, so be very mindful
     #    about performance. Avoid intensive database queries here.
     def self.custom_sidebar_data(viewer)
-      return {
-        lfrp_icons: LookingForRp.web_list,
-        txt_extra_installed: Manage.is_extra_installed?("txt")
-      }
+      return {}
     end
   end
 end
