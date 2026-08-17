@@ -1,6 +1,6 @@
 module AresMUSH
   module FS3Skills
-    def self.can_manage_focus?(actor)
+    def self.can_manage_luck?(actor)
       actor && actor.has_permission?("manage_abilities")
     end
     
