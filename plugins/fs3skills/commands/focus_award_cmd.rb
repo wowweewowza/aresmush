@@ -21,7 +21,7 @@ module AresMUSH
       end
       
       def check_can_award
-        return nil if FS3Skills.can_manage_focus?(enactor)
+        return nil if FS3Skills.can_manage_luck?(enactor)
         return t('dispatcher.not_allowed')
       end
       
