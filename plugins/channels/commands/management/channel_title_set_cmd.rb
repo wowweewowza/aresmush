@@ -22,7 +22,7 @@ module AresMUSH
       end
       
       def handle
-        model = Character.named[self.char_name]
+        model = Character.named(self.char_name)
         Channels.with_an_enabled_channel(self.channel_name, client, model) do |channel|
           options = Channels.get_channel_options(model, channel)
           options.update(title: self.title)
