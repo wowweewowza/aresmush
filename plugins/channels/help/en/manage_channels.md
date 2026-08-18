@@ -28,6 +28,10 @@ Channel admins can create, edit and delete channels.  Go to [Admin -> Setup -> S
 `channel/talkroles <channel>=<roles>` - Use commas to separate multiple roles.  Use "none" to clear existing roles.
 `channel/defaultalias <channel>=<aliases>` - Sets the default aliases for a channel.
 
+## Channel Options
+
+`channel/titleset <char>/<channel>=<title>` - Sets a channel-specific title to show up in front of your name.
+
 ## Adding and Removing Characters
 
 Channel administrators can add or remove characters from a channel:
