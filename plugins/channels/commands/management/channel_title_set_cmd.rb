@@ -6,10 +6,10 @@ module AresMUSH
       attr_accessor :char_name, :channel_name, :title
       
       def parse_args
-        args = cmd.parse_args(ArgParser.arg1_slash_arg2_equals_optional_arg3)
+        args = cmd.parse_args(ArgParser.arg1_equals_arg2_slash_arg3)
         self.char_name = titlecase_arg(args.arg1)
-        self.channel_name = titlecase_arg(args.arg2)
-        self.title = trim_arg(args.arg3)
+        self.channel_name = titlecase_arg(args.arg3)
+        self.title = trim_arg(args.arg2)
       end
       
       def required_args

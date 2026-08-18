@@ -29,10 +29,6 @@ module AresMUSH
     def self.arg1_slash_arg2_equals_arg3
       /(?<arg1>[^\/]+)\/(?<arg2>[^\/]+)\=(?<arg3>.+)/
     end
-
-    def self.arg1_slash_arg2_equals_optional_arg3
-      /(?<arg1>[^\/]+)\/(?<arg2>[^\/]+)\=?(?<arg3>.+)/
-    end
     
     def self.arg1_equals_arg2_slash_optional_arg3
       /(?<arg1>[^\=]+)\=(?<arg2>[^\/]+)\/?(?<arg3>.+)?/

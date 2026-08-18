@@ -30,7 +30,7 @@ Channel admins can create, edit and delete channels.  Go to [Admin -> Setup -> S
 
 ## Channel Options
 
-`channel/titleset <char>/<channel>=<title>` - Sets a channel-specific title to show up in front of your name.
+`channel/titleset <char>=<title>/<channel>` - Sets a channel-specific title to show up in front of your name.
 
 ## Adding and Removing Characters
 
