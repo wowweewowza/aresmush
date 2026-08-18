@@ -55,6 +55,8 @@ module AresMUSH
           return ChannelRolesCmd
         when "title"
           return ChannelTitleCmd
+        when "titleset"
+          return ChannelTitleSetCmd
         when "showtitles"
           return ChannelShowTitlesCmd
         when "who"
