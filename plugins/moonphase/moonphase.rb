@@ -1,7 +1,7 @@
 $:.unshift File.dirname(__FILE__)
 
 module AresMUSH
-     module MoonPhase
+  module MoonPhase
 
     def self.plugin_dir
       File.dirname(__FILE__)
@@ -20,7 +20,10 @@ module AresMUSH
     end
 
     def self.get_web_request_handler(request)
-      nil
+      case request.cmd
+      when "phaseName"
+        return PhaseNameRequestHandler
+      end
     end
     
   end
