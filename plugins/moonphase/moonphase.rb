@@ -20,7 +20,10 @@ module AresMUSH
     end
 
     def self.get_web_request_handler(request)
-      nil
+      case request.cmd
+      when "phaseName"
+        return PhaseNameRequestHandler
+      end
     end
     
   end
