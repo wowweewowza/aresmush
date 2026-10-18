@@ -67,7 +67,7 @@ module AresMUSH
 
         wind_desc = t('Openweather.winds', :wind_speed => wind_speed, :unit => units[1], :wind_dir => wind_dir)
 
-        moon_desc = t('Openweather.moon', :wind_dir => wind_dir)
+        moon_desc = t('Openweather.moon', :moon_phase => moon_phase)
 
         "#{temp_desc} #{wind_desc} #{weather_desc}%R%R#{moon_desc}"
       
