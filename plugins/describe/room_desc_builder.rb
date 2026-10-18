@@ -34,10 +34,7 @@ module AresMUSH
           weather = Openweather.weather_for_area(room.area_name)
         end
 
-        phase_name = MoonPhase.phase_name
-        phase_desc = "%R%RThe current moon phase is #{phase_name}."
-
-        weather ? "%R%R#{weather}%R%R#{phase_desc}" : nil
+        weather ? "%R%R#{weather}" : nil
       end
 
     end
