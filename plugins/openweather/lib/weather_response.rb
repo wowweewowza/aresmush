@@ -11,64 +11,65 @@ module AresMUSH
 
        def coords
          {
-           latitude: weather[:coord][:lat],
-           longitude: weather[:coord][:lon]
+           latitude: weather[:lat],
+           longitude: weather[:lon]
          }
        end
 
        def temperature
-         weather[:main][:temp]
+         weather[:data][0][:temp]
        end
 
        def pressure
-         weather[:main][:pressure]
+         weather[:data][0][:pressure]
        end
 
        def humidity
-         weather[:main][:humidity]
+         weather[:data][0][:humidity]
        end
 
        def temperature_range
-         [weather[:main][:temp_min], weather[:main][:temp_max]]
+         [weather[:data][0][:temp][:min], weather[:main][:temp][:max]]
        end
 
+       # ???
        def wind
-         weather[:wind]
+         weather[:data][0][:wind]
        end
 
        def cloudy?
-         !weather[:clouds].nil? && weather[:clouds][:all] > 0
+         !weather[:data][0][:clouds].nil? && weather[:data][0][:clouds] > 0
        end
 
        def clouds
-         return 0 if weather[:clouds].nil?
-         weather[:clouds][:all]
+         return 0 if weather[:data][0][:clouds].nil?
+         weather[:data][0][:clouds]
        end
 
        def rainy?
-         !weather[:rain].nil? && weather[:rain][:'3h'] > 0
+         !weather[:data][0][:rain].nil? && weather[:data][0][:rain] > 0
        end
 
        def rain
          return 0 unless rainy?
-         weather[:rain][:'3h']
+         weather[:data][0][:rain]
        end
 
        def snowy?
-         !weather[:snow].nil? && weather[:snow][:'3h'] > 0
+         !weather[:data][0][:snow].nil? && weather[:data][0][:snow] > 0
        end
 
        def snow
          return 0 unless snowy?
-         weather[:snow][:'3h']
+         weather[:data][0][:snow]
        end
 
        def sunrise
-         weather[:sys][:sunrise]
+         weather[:data][0][:sunrise]
        end
 
        def sunset
-         weather[:sys][:sunset]
+         weather[:data][0][:sunset]
        end
      end
    end

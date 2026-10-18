@@ -43,9 +43,9 @@ module AresMUSH
 
         temperature = weather[:data][0][:temp][:day] || 0
         humidity = weather[:data][0][:humidity] || 0
-        wind_speed = weather[:data][0][:wind][:speed] || 0
-        wind_deg = weather[:data][0][:wind][:deg] || 0
-        moon_phase = weather[:data][0][:moon][:phase] || 0
+        wind_speed = weather[:data][0][:wind_speed] || 0
+        wind_deg = weather[:data][0][:wind_deg] || 0
+        moon_phase = weather[:data][0][:moon_phase] || 0
 
         x = wind_deg % 360
         x = (x/22.5)+1
