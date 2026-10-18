@@ -43,6 +43,7 @@ module AresMUSH
         humidity = weather[:main][:humidity] || 0
         wind_speed = weather[:wind][:speed] || 0
         wind_deg = weather[:wind][:deg] || 0
+        moon_phase = weather[:moon][:phase] || 0
 
         x = wind_deg % 360
         x = (x/22.5)+1
@@ -64,7 +65,9 @@ module AresMUSH
 
         wind_desc = t('Openweather.winds', :wind_speed => wind_speed, :unit => units[1], :wind_dir => wind_dir)
 
-        "#{temp_desc} #{wind_desc} #{weather_desc}"
+        moon_desc = t('Openweather.moon', :wind_dir => wind_dir)
+
+        "#{temp_desc} #{wind_desc} #{weather_desc}%R%R#{moon_desc}"
       
 
       end
