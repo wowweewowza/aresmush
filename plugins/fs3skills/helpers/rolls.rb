@@ -2,7 +2,7 @@ module AresMUSH
   module FS3Skills
     
     def self.success_target_number
-      6
+      10
     end
     
     # Makes an ability roll and returns the raw dice results.
@@ -23,11 +23,11 @@ module AresMUSH
       if (dice > 30)
         Global.logger.warn "Attempt to roll #{dice} dice."
         # Hey if they're rolling this many dice they ought to succeed spectacularly.
-        return [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+        return [12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12]
       end
       
       dice = [dice, 1].max.ceil
-      dice.times.collect { 1 + rand(8) }
+      dice.times.collect { 1 + rand(12) }
     end
     
     # Determines the success level based on the raw die result.
