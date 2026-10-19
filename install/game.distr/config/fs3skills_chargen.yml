@@ -4,7 +4,14 @@ fs3skills:
   allow_incapable_action_skills: false
   free_backgrounds: 6
   free_languages: 3
-  max_ap: 40
+  max_ap: 45
+  ap_age_cap:
+    '25': 30
+    '30': 33
+    '35': 36
+    '40': 39
+    '45': 42
+    '100': 45
   max_attr_rating: 5
   max_attrs_at_or_above:
     '3': 4
