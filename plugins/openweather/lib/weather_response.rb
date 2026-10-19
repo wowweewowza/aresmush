@@ -17,7 +17,7 @@ module AresMUSH
        end
 
        def temperature
-         weather[:data][0][:temp]
+         weather[:data][0][:temp][:day]
        end
 
        def pressure

@@ -23,6 +23,18 @@ openweather:
   weather_cron:
       minute:
       - 0
+  
+  # These are the upper limits for the moon phases
+  moon_phases:
+    0.02: "new_moon"
+    0.23: "waxing_crescent"
+    0.27: "first_quarter"
+    0.48: "waxing_gibbous"
+    0.52: "full_moon"
+    0.73: "waning_gibbous"
+    0.77: "last_quarter"
+    0.98: "waning_crescent"
+    1.00: "new_moon"
 
 # These result codes are from https://openweathermap.org/weather-conditions
 # If not defined it will use the default description from api

@@ -45,7 +45,10 @@ module AresMUSH
         humidity = weather[:data][0][:humidity] || 0
         wind_speed = weather[:data][0][:wind_speed] || 0
         wind_deg = weather[:data][0][:wind_deg] || 0
-        moon_phase = weather[:data][0][:moon_phase] || 0
+        moon_phase_id = weather[:data][0][:moon_phase] || 0
+
+        moon_phase_desc = Global.read_config("openweather", "weather_code_desc")
+        moon_phase = moon_phase_desc.find { |key, value| key >= moon_phase_id }
 
         x = wind_deg % 360
         x = (x/22.5)+1
