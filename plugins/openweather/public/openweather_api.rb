@@ -48,7 +48,7 @@ module AresMUSH
         moon_phase_id = weather[:data][1][:moon_phase] || 0
 
         moon_phase_desc = Global.read_config("openweather", "moon_phases")
-        moon_phases = moon_phase_desc.find { |key, value| key.to_i >= moon_phase_id.to_f }
+        moon_phases = moon_phase_desc.find { |key, value| key.to_f >= moon_phase_id.to_f }
         moon_phase = moon_phases[1]
 
         x = wind_deg % 360
