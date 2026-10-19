@@ -3,7 +3,7 @@ module AresMUSH
      # Look up current weather conditions by available api calls
      #   all methods return parsed json response objects
      class Weather
-       VERSION = '2.5'
+       VERSION = '4.0'
        BASE_URL = 'http://api.openweathermap.org/data/'
        attr_accessor :version, :api_key, :units
 
@@ -35,7 +35,7 @@ module AresMUSH
        end
 
        def url(params)
-	       URI.parse("#{BASE_URL}#{version}/weather?" + params_to_string(params))
+	       URI.parse("#{BASE_URL}#{version}//onecall/timeline/1day?" + params_to_string(params))
        end
 
        def params_to_string(params)
