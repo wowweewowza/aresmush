@@ -41,14 +41,15 @@ module AresMUSH
 
         # 4.0 1day has forcasted weather nested in an array. We'll call the first set of data to get today's weather.
 
-        temperature = weather[:data][0][:temp][:day] || 0
-        humidity = weather[:data][0][:humidity] || 0
-        wind_speed = weather[:data][0][:wind_speed] || 0
-        wind_deg = weather[:data][0][:wind_deg] || 0
-        moon_phase_id = weather[:data][0][:moon_phase] || 0
+        temperature = weather[:data][1][:temp][:day] || 0
+        humidity = weather[:data][1][:humidity] || 0
+        wind_speed = weather[:data][1][:wind_speed] || 0
+        wind_deg = weather[:data][1][:wind_deg] || 0
+        moon_phase_id = weather[:data][1][:moon_phase] || 0
 
-        moon_phase_desc = Global.read_config("openweather", "weather_code_desc")
-        moon_phase = moon_phase_desc.find { |key, value| key >= moon_phase_id.to_i }
+        moon_phase_desc = Global.read_config("openweather", "moon_phases")
+        moon_phases = moon_phase_desc.find { |key, value| key >= moon_phase_id.to_f }
+        moon_phase = moon_phases[1]
 
         x = wind_deg % 360
         x = (x/22.5)+1
@@ -57,8 +58,8 @@ module AresMUSH
 
         # Weather is in an array list, The most recent the last element.
 
-        condition = weather[:data][0][:weather].last[:description]
-        condition_id = weather[:data][0][:weather].last[:id]
+        condition = weather[:data][1][:weather].last[:description]
+        condition_id = weather[:data][1][:weather].last[:id]
 
         # Read the code desc from config, or use the api crappy description
 
