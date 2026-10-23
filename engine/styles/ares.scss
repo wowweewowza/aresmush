@@ -3113,5 +3113,27 @@ ul.reference-help-list > li:not(:last-child)::after {
   
 }
 
+/* Wowza Paperdoll */
+
+.sym-container {
+    border: 3px solid black;
+    padding: 20px;
+}
+
+#sym-canvas {
+    position: relative;
+    height: 500px;
+    width: 500px;
+    overflow: hidden;
+}
+.sym-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
 @import "custom_style";
-@import "wowza-paperdoll";
