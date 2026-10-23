@@ -3123,11 +3123,10 @@ ul.reference-help-list > li:not(:last-child)::after {
 }
 
 .sym-container {
-    border: 3px solid black;
     margin: 20px;
-    padding: 20px;
-    min-height: 200px;
-    max-height: 500px;
+    width: 100%;
+    min-width: 250px;
+    max-width: 500px;
 }
 
 #sym-canvas {
@@ -3139,6 +3138,8 @@ ul.reference-help-list > li:not(:last-child)::after {
 
 #sym-canvas img {
     aspect-ratio: 1;
+    border: 3px solid black;
+    padding: 20px;
     width: 100%;
 }
 
@@ -3180,10 +3181,6 @@ ul.reference-help-list > li:not(:last-child)::after {
         flex-direction: column;
     }
 
-    .sym-container {
-      min-width: 200px;
-      max-width: 500px;
-    }
 }
 
 @import "custom_style";
