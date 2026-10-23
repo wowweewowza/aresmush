@@ -3119,6 +3119,7 @@ ul.reference-help-list > li:not(:last-child)::after {
     aspect-ratio: 1;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 95%;
 }
 
@@ -3139,7 +3140,7 @@ ul.reference-help-list > li:not(:last-child)::after {
 #sym-canvas img {
     aspect-ratio: 1;
     border: 3px solid black;
-    padding: 20px;
+    padding: ;
     width: 100%;
 }
 
@@ -3181,6 +3182,9 @@ ul.reference-help-list > li:not(:last-child)::after {
         flex-direction: column;
     }
 
+    .controls {
+      max-width: 350px;
+    }
 }
 
 @import "custom_style";
