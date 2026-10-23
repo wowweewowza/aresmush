@@ -3158,6 +3158,7 @@ ul.reference-help-list > li:not(:last-child)::after {
     display: flex;
     flex-direction: column;
     margin: 20px;
+    padding: 20px;
     width: 100%;
     max-width: 350px;
 }
