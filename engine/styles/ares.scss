@@ -3115,13 +3115,6 @@ ul.reference-help-list > li:not(:last-child)::after {
 
 /* Wowza Paperdoll */
 
-body {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
 .paperdoll-wrap {
     aspect-ratio: 1;
     display: flex;
@@ -3134,6 +3127,9 @@ body {
     border: 3px solid black;
     margin: 20px;
     padding: 20px;
+    min-height: 200px;
+    min-width: 200px;
+    max-height: 500px;
     max-width: 500px;
 }
 
@@ -3163,6 +3159,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 20px;
+    width: 100%;
 }
 
 .menu-group {
@@ -3181,6 +3178,7 @@ body {
 
 @media (max-width: 1000px) {
     .paperdoll-wrap {
+        align-items: center;
         flex-direction: column;
     }
 }
