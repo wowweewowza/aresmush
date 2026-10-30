@@ -3113,4 +3113,78 @@ ul.reference-help-list > li:not(:last-child)::after {
   
 }
 
+/* Wowza Paperdoll */
+
+.paperdoll-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between!important;
+    margin: 10px;
+    width: 100%;
+}
+
+.sym-container {
+    margin: 20px;
+    width: 100%;
+    min-width: 250px;
+    max-width: 500px;
+}
+
+#sym-canvas {
+    aspect-ratio: 1;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#sym-canvas img {
+    aspect-ratio: 1;
+    padding: 20px;
+    width: 100%;
+}
+
+.sym-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.menu-group {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0px;
+}
+
+.menu-group label {
+    margin-right: auto;
+}
+
+.menu-group select {
+    margin-left: auto;
+}
+
+@media (max-width: 1000px) {
+    .paperdoll-wrap {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .controls {
+      max-width: 350px;
+    }
+}
+
 @import "custom_style";
