@@ -17,10 +17,9 @@ module AresMUSH
         input = matches[1]
         return "" if !input
         
-        tooltip = (input.before("|") || input)
-        tooltiptext = (input.after("|") || "")
+        tooltip = input
         
-        template = TooltipExtensionTemplate.new(tooltip, tooltiptext)
+        template = TooltipExtensionTemplate.new(tooltip)
         template.render
 
       end
