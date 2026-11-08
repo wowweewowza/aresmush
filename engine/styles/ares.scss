@@ -3187,4 +3187,30 @@ ul.reference-help-list > li:not(:last-child)::after {
     }
 }
 
+/* Wowza Tooltip Extention */
+
+.tooltip-ext {
+  position: relative;
+  display: inline;
+  border-bottom: 1px dotted white;
+  cursor: pointer;
+}
+
+.tooltiptext-ext {
+  visibility: hidden; /* Hidden by default */
+  min-width: 130px;
+  background-color: black;
+  color: white;
+  text-align: left;
+  padding: 5px 5px;
+  border-radius: 6px;
+  position: absolute;
+  transform: translate(5px, -5px);
+  z-index: 1;
+}
+
+.tooltip-ext:hover .tooltiptext-ext {
+  visibility: visible;
+}
+
 @import "custom_style";
