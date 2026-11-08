@@ -3,7 +3,8 @@ module AresMUSH
     
     class TooltipExtensionTemplate < ErbTemplateRenderer
                                   
-      def initialize()
+      def initialize(tooltip)
+        @tooltip = tooltip
         super File.dirname(__FILE__) + "/tooltip.erb"        
       end      
     end
@@ -18,7 +19,7 @@ module AresMUSH
         
         return "" if !tooltip 
        
-        template = TooltipExtensionTemplate.new(tooltip)
+        template = CollapsibleExtensionTemplate.new(tooltip)
         template.render
       end
     end
