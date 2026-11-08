@@ -14,14 +14,12 @@ module AresMUSH
       end
       
       def self.parse(matches)
-        input = matches[1]
-        return "" if !input
+        tooltip = matches[1]
         
-        tooltip = input
-        
+        return "" if !tooltip 
+       
         template = TooltipExtensionTemplate.new(tooltip)
         template.render
-
       end
     end
   end
