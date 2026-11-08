@@ -23,7 +23,7 @@ module AresMUSH
         tooltip_text = input.after("|") || ""
 
 
-        tooltip = [tooltip_name, tooltip_text]
+        tooltip = [tooltip_name.strip, tooltip_text.strip]
        
         template = TooltipExtensionTemplate.new(tooltip)
         template.render
