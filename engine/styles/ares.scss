@@ -3198,9 +3198,6 @@ ul.reference-help-list > li:not(:last-child)::after {
 
 .tooltiptext-ext {
   visibility: hidden;
-  min-width: 130px;
-  width: fit-content;
-  max-width: 500px;
   background-color: black;
   color: white;
   text-align: left;
