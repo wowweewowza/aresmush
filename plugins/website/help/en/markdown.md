@@ -92,6 +92,12 @@ Collapsibles let you show and hide text with the click of a button.
 `Text you want to show and hide.`
 `[[/collapsible]]`
 
+## Tooltips
+
+Tooltips relay information with a quick mouseover.
+
+`[[tooltip Text you see|What you see when you hover over it.]]`
+
 ## Scene, Page and Character Lists
 
 You can include a gallery of characters, a table of scenes, or a list of wiki pages matching certain tags.
