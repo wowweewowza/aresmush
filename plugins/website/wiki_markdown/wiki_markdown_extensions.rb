@@ -28,6 +28,7 @@ module AresMUSH
           
           WikidotItalics,
           CharacterGalleryMarkdownExtension,
+          TooltipMarkdownExtension,
           MusicPlayerMarkdownExtension,
           SpotifyMarkdownExtension,
           YoutubeMarkdownExtension,
