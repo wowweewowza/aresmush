@@ -15,11 +15,17 @@ module AresMUSH
       end
       
       def self.parse(matches)
-        tooltip = matches[1]
+        input = matches[1]
         
-        return "" if !tooltip 
+        return "" if !input
+
+        tooltip_name = input.before("|") || input
+        tooltip_text = input.after("|") || ""
+
+
+        tooltip = [tooltip_name, tooltip_text]
        
-        template = CollapsibleExtensionTemplate.new(tooltip)
+        template = TooltipExtensionTemplate.new(tooltip)
         template.render
       end
     end
